@@ -67,9 +67,9 @@
 
                             <input type="text" class="url-input" name="url"
                                 placeholder="لینک خود را اینجا وارد کنید." autocomplete="off" />
-                            @if ($errors->has('url'))
+                            @error ('url')
                                 <label for="url">{{ $errors->first('url') }}</label>
-                            @endif
+                            @enderror
                             {{-- <input style="margin-top:20px;" type="text" class="url-input" name="short" placeholder="slug خود را اینجا وارد کنید."
                                 autocomplete="off" />
                                 @if ($errors->has('short'))
@@ -80,7 +80,7 @@
                     </form>
                     <div class="url-shorten-results">
                         @if (session()->has('short'))
-                            {{url(session()->get('short')) }}
+                            لینک کوتاه شده برای شما :<a href="{{url('x'.session()->get('short')) }}">{{url('x'.session()->get('short')) }}</a>
                         @endif
                     </div>
                 </div>
@@ -142,85 +142,6 @@
                 </div>
             </div>
         </section>
-        <!-- Footer -->
-        <footer class="footer" id="resources">
-            <div class="container">
-                <!-- Website Logo -->
-                <div class="logo">
-                    <a href="#">
-                        <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/logo.svg"
-                            alt="" />
-                    </a>
-                </div>
-                <!-- Quick Links -->
-                <div class="quick-links">
-                    <div class="links-group">
-                        <span>Features</span>
-                        <div>
-                            <a href="#">Link Shortening</a>
-                            <a href="#">Branded Links</a>
-                            <a href="#">Analytics</a>
-                        </div>
-                    </div>
-                    <div class="links-group">
-                        <span>Resources</span>
-                        <div>
-                            <a href="#">Blog</a>
-                            <a href="#">Developers</a>
-                            <a href="#">Support</a>
-                        </div>
-                    </div>
-                    <div class="links-group">
-                        <span>Company</span>
-                        <div>
-                            <a href="#">About</a>
-                            <a href="#">Our Team</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Social Media -->
-                <div class="social-media">
-                    <a href="#">
-                        <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-facebook.svg"
-                            alt="Facebook Logo">
-                    </a>
-                    <a href="#">
-                        <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-twitter.svg"
-                            alt="Twitter Logo">
-                    </a>
-                    <a href="#">
-                        <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-pinterest.svg"
-                            alt="Pinterest Logo">
-                    </a>
-                    <a href="#">
-                        <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-instagram.svg"
-                            alt="Instagram Logo">
-                    </a>
-                </div>
-            </div>
-            <!-- Made By -->
-            <div class="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="outer-link"
-                    target="_blank">Frontend Mentor</a>.
-                Coded by <span class="outer-link">Mohamed Aridah</span>.
-                <ul class="social-media">
-                    <li>
-                        <a href="https://www.codepen.io/FedLover" title="go To My Codepen Account">
-                            <i class="fa-brands fa-codepen icon"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.frontendmentor.io/profile/MohamedAridah"
-                            title="go To My Frontend Mentor Account">
-                            <img src="https://mohamedaridah.github.io/hosted-assets/FEM.png" class="image"
-                                alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
     </main>
 
 </body>

@@ -17,18 +17,23 @@ use Illuminate\Http\Request;
 
 Route::get('/', "App\Http\Controllers\HomeController@index")->name('index');
 Route::post('/', "App\Http\Controllers\HomeController@store")->name('set');
-Route::get('/{short}', "App\Http\Controllers\HomeController@redirect")->name('short')->missing(function (Request $request) {
-  return response()->view('missed');
-});
-
-
-// Route::prefix('links')->group(function () {
-//   Route::resource('link', LinkController::class)->only('store');  
-// });
 
 Route::get('/api', function () {
-  return 'hi';
+    return 'hi';
 })->name('api');
+
+Route::post('/api', function () {
+    return 'hi';
+})->name('api');
+
+Route::get('/{short}', "App\Http\Controllers\HomeController@redirect")->name('short')->missing(function (Request $request) {
+  return redirect()->route('index');
+});
+
+// Route::prefix('links')->group(function () {
+//   Route::resource('link', LinkController::class)->only('store');
+// });
+
 
 // Auth::routes();
 

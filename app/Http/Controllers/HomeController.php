@@ -40,13 +40,15 @@ class HomeController extends Controller
                 $counter++;
                 $random = Str::random($counter);
                 $short = Link::where('short', $random)->first();
-            } 
+            }
             $validate['short'] = $random;
             $createResult = Link::create($validate);
+            $short  = $createResult->short ?? null;
         } else {
             $short = $urlValidate->short;
         }
-        return redirect()->route('index')->withErrors($validate)->with('short', $createResult->short);
+        $validate = null;
+        return redirect()->route('index')->withErrors($validate)->with('short', $short);
     }
 
     public function redirect(Link $short)
