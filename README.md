@@ -9,8 +9,8 @@ ShortLinker is a simple project that utilizes the Laravel framework to create a 
 To install the project, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/ShortLinker.git
-cd ShortLinker
+git clone https://github.com/asefg482/short-link.git
+cd short-link
 composer install
 ```
 
@@ -21,11 +21,6 @@ php artisan key:generate
 php artisan migrate
 ```
 
-Usage
-After installation, you can easily use the following commands to create and manage links:
-
-php artisan link:shorten {url}: Shorten a link
-php artisan link:stats {code}: Get link statistics
 Contribution
 If you'd like to contribute to the development of this project, we welcome your collaboration. To contribute, fork the repository, make changes in a new branch, and finally, submit a pull request.
 
